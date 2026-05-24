@@ -89,7 +89,7 @@ def generate_ai_explanation(features: dict, pd_score: float, risk_bin: str) -> s
             return "_(Gen AI explanation tidak tersedia — GEMINI_API_KEY belum di-set di Streamlit Secrets.)_"
 
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
 
         drivers = []
         if features.get("dti", 0) > 25:
